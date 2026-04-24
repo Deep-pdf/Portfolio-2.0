@@ -88,9 +88,9 @@ p {
 .logo-wrap {
   position: absolute;
   left: 901px;
-  top: 188px;
-  width: 335px;
-  height: 297px;
+  top: 288px;
+  width: 235px;
+  height: 210px;
   overflow: hidden;
 }
 
@@ -107,12 +107,12 @@ p {
 }
 
 .microsoft {
-  left: 672px;
-  top: 421px;
+  left: 735px;
+  top: 451px;
   width: 469px;
   height: 86px;
   font-family: "Inter Local", Inter, Arial, sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 400;
   font-style: normal;
   line-height: normal;
@@ -126,7 +126,7 @@ p {
   height: 140px;
   transform: translateX(-50%);
   font-family: "Creato Display Local", "Creato Display", Arial, sans-serif;
-  font-size: 130px;
+  font-size: 100px;
   font-weight: 700;
   font-style: normal;
   line-height: 100px;
@@ -135,10 +135,10 @@ p {
 }
 
 .professional {
-  left: 685px;
+  left: 750px;
   top: 572px;
   font-family: "Amiko Local", Amiko, Arial, sans-serif;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 400;
   font-style: normal;
   line-height: normal;
@@ -147,12 +147,12 @@ p {
 }
 
 .xp {
-  left: 1212px;
-  top: 429px;
+  left: 1152px;
+  top: 460px;
   width: 251px;
   height: 195px;
   font-family: "DM Sans Local", "DM Sans", Arial, sans-serif;
-  font-size: 100px;
+  font-size: 70px;
   font-weight: 700;
   font-style: italic;
   font-variation-settings: "opsz" 14;
@@ -190,4 +190,45 @@ p {
 
 .segment-3 {
   left: 61px;
+}
+
+.loader {
+  position: absolute;
+  left: 801px;
+  top: 755px;
+  width: 250px;
+  height: 25px;
+  border: 3px solid #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Moving group */
+.slider {
+  position: absolute;
+  display: flex;
+  gap: 6px;
+  height: 100%;
+  left: -80px;
+
+  animation: slide 1.2s linear infinite;
+}
+
+/* Blocks */
+.block {
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(to right, #00aaff, #0077cc);
+  border-radius: 2px;
+}
+
+/* Animation */
+@keyframes slide {
+  0% {
+    left: -80px;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
