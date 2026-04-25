@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            min-width: 1024px;
+            min-height: 600px;
+        }
+
+        .main {
+            height: 100%;
+            width: 100%;
+            flex: 1;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .bar {
+            height: 10vh;
+            width: 100%;
+            background: #002c6a;
+            z-index: 10;
+            position: fixed;
+            left: 0;
+            right: 0;
+        }
+
+        .top {
+            top: 0;
+        }
+
+        .bottom {
+            bottom: 0;
+        }
+
+        .workarea {
+            height: calc(100vh - 20vh);
+            width: 100%;
+            background:
+                radial-gradient(circle at 15% 30%, rgba(255, 255, 255, 0.15), transparent 40%),
+                radial-gradient(circle at 85% 70%, rgba(255, 255, 255, 0.12), transparent 45%),
+                linear-gradient(135deg, #0063a5 0%, #0b74ba 100%);
+            z-index: 1;
+            position: fixed;
+            top: 10vh;
+            bottom: 10vh;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .Mline {
+            width: 0.15vw;
+            height: clamp(250px, 40vh, 500px);
+            background: linear-gradient(to bottom,
+                    transparent 0%,
+                    white 40%,
+                    white 60%,
+                    transparent 100%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .Tline {
+            width: clamp(400px, 65vw, 750px);
+            height: 1.2vh;
+            background: white;
+            -webkit-mask-image: radial-gradient(ellipse 60% 100% at center,
+                    black 40%,
+                    transparent 81%);
+            mask-image: radial-gradient(ellipse 60% 100% at center,
+                    black 40%,
+                    transparent 81%);
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .Bline {
+            width: clamp(400px, 65vw, 750px);
+            height: 1.2vh;
+            background: #EBAD00;
+            -webkit-mask-image: radial-gradient(ellipse 60% 100% at center,
+                    black 40%,
+                    transparent 81%);
+            mask-image: radial-gradient(ellipse 60% 100% at center,
+                    black 40%,
+                    transparent 81%);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .left-block {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .right-block {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            position: relative;
+        }
+
+
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 1600px) {
+
+            .left-block,
+            .right-block {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 1024px) {}
+
+        @media (max-width: 768px) {
+            body {
+                min-width: auto;
+            }
+
+            .workarea {
+                height: calc(100vh - 20vh);
+                bottom: 10vh;
+            }
+
+            .left-block,
+            .right-block {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="top bar"></div>
+        <div class="workarea">
+            <div class="Tline"></div>
+            <div class="Mline"></div>
+            <div class="Bline"></div>
+
+            <div class="left-block">
+            </div>
+
+            <div class="right-block">
+                <div class="logo-wrap">
+                    <img src="Assets/MS logo.png" alt="" class="logo" />
+                    <p class="text microsoft">Microsoft</p>
+                    <p class="text windows">Windows</p>
+                    <p class="text professional">Professional</p>
+                    <p class="text xp">xp</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="bottom bar"></div>
+    </div>
+</body>
+
+</html>

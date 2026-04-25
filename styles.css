@@ -232,3 +232,337 @@ p {
     left: 100%;
   }
 }
+
+.login-page {
+  background: #0a4094;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-page .xp-login-frame {
+  position: fixed;
+  inset: 0;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0b98dc;
+  transform: none;
+}
+
+.login-band {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: #0d4798;
+  z-index: 3;
+}
+
+.top-band {
+  top: 0;
+}
+
+.bottom-band {
+  bottom: 0;
+}
+
+.login-center {
+  position: absolute;
+  inset: 120px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 1050px 700px at 1040px 445px, rgba(86, 165, 231, 0.98) 0%, rgba(27, 145, 216, 0.8) 48%, rgba(0, 143, 211, 0.94) 74%),
+    linear-gradient(90deg, #58abea 0%, #0397d5 28%, #0796d6 66%, #59aef0 100%);
+}
+
+.top-white-curve {
+  position: absolute;
+  left: 506px;
+  top: -11px;
+  width: 910px;
+  height: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+}
+
+.bottom-gold-curve {
+  position: absolute;
+  left: 500px;
+  bottom: -58px;
+  width: 850px;
+  height: 82px;
+  border-top: 5px solid #d0aa08;
+  border-radius: 50% 50% 0 0;
+}
+
+.login-brand {
+  position: absolute;
+  left: 515px;
+  top: 214px;
+  width: 350px;
+  height: 235px;
+  color: #fff;
+}
+
+.login-logo-wrap {
+  position: absolute;
+  left: 125px;
+  top: -4px;
+  width: 170px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.login-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-ms {
+  position: absolute;
+  left: 0;
+  top: 115px;
+  font-size: 29px;
+  line-height: 31px;
+  color: #fff;
+}
+
+.login-windows {
+  position: absolute;
+  left: 0;
+  top: 142px;
+  font-family: "Creato Display Local", Arial, Helvetica, sans-serif;
+  font-size: 67px;
+  font-weight: 700;
+  line-height: 67px;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.login-xp {
+  display: inline-block;
+  margin-left: 8px;
+  font-family: "DM Sans Local", Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 45px;
+  color: #f09a2e;
+  transform: translateY(-9px);
+}
+
+.login-pro {
+  position: absolute;
+  left: 15px;
+  top: 206px;
+  font-family: "Amiko Local", Arial, Helvetica, sans-serif;
+  font-size: 39px;
+  line-height: 42px;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.login-prompt {
+  position: absolute;
+  left: 329px;
+  top: 498px;
+  width: 515px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 39px;
+  line-height: 44px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 70, 130, 0.36);
+}
+
+.login-divider {
+  position: absolute;
+  left: 959px;
+  top: 119px;
+  width: 2px;
+  height: 604px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.58));
+}
+
+.user-list {
+  position: absolute;
+  left: 1048px;
+  top: 216px;
+  width: 675px;
+  height: 390px;
+}
+
+.user-tile {
+  position: absolute;
+  left: 0;
+  width: 675px;
+  height: 164px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  border: 0;
+  background: linear-gradient(90deg, rgba(11, 70, 156, 0.92) 0%, rgba(36, 125, 210, 0.5) 54%, rgba(66, 156, 231, 0) 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+.user-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(255, 255, 255, 0.97);
+  border-right-color: transparent;
+  border-radius: 13px 0 0 13px;
+  pointer-events: none;
+}
+
+.user-tile::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0));
+}
+
+.selected-user {
+  top: 0;
+}
+
+.admin-user {
+  top: 226px;
+}
+
+.profile-frame {
+  position: absolute;
+  left: 29px;
+  top: 23px;
+  width: 114px;
+  height: 114px;
+  overflow: hidden;
+  border: 3px solid #f1df00;
+  border-radius: 10px;
+  background: #195fb8;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.user-name,
+.admin-name {
+  position: absolute;
+  left: 178px;
+  top: 32px;
+  font-size: 30px;
+  line-height: 36px;
+  color: #fff;
+}
+
+.admin-avatar {
+  position: absolute;
+  left: 28px;
+  top: 24px;
+  width: 114px;
+  height: 114px;
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.avatar-head {
+  position: absolute;
+  left: 28px;
+  top: 7px;
+  width: 57px;
+  height: 69px;
+  border-radius: 48% 48% 44% 44%;
+  background: #05003e;
+}
+
+.avatar-body {
+  position: absolute;
+  left: -2px;
+  bottom: -4px;
+  width: 116px;
+  height: 50px;
+  border-radius: 50% 50% 0 0;
+  background: #05003e;
+}
+
+.password-label {
+  position: absolute;
+  left: 184px;
+  top: 104px;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+}
+
+.password-input {
+  position: absolute;
+  left: 184px;
+  top: 129px;
+  width: 325px;
+  height: 54px;
+  padding: 7px 10px;
+  border: 1px solid #111;
+  border-radius: 4px;
+  background: #fff;
+  color: #111;
+  font-size: 24px;
+  outline: 0;
+}
+
+.submit-button,
+.help-button {
+  position: absolute;
+  top: 129px;
+  width: 53px;
+  height: 53px;
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 5px;
+}
+
+.submit-button {
+  left: 520px;
+  background: linear-gradient(#29d565, #12a846);
+}
+
+.submit-button::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 24px;
+  width: 28px;
+  height: 5px;
+  background: #fff;
+}
+
+.submit-button::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 17px;
+  width: 15px;
+  height: 15px;
+  border-top: 5px solid #fff;
+  border-right: 5px solid #fff;
+  transform: rotate(45deg);
+}
+
+.help-button {
+  left: 582px;
+  background: linear-gradient(135deg, #2859f5, #1430aa);
+  color: #fff;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+}
