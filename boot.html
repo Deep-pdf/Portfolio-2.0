@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="styles.css" />
     <style>
         * {
             margin: 0;
@@ -142,6 +141,61 @@
             position: relative;
         }
 
+        .logo-wrap {
+            width: 270px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+        }
+
+        .logo{
+            width: 100px;
+            object-fit: contain;
+            position: absolute;
+            left: 50%;
+            top: 0%;
+        }
+
+        .microsoft {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.5rem;
+            color: white;
+            position: absolute;
+            top: 26%;
+            left: 0%;
+        }
+
+        .Windows {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 3.3rem;
+            font-weight: 620;
+            color: white;
+            position: absolute;
+            top: 35%;
+            left: 0%;
+        }
+
+        .xp{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2rem;
+            font-weight: 720;
+            color: #ff8800;
+            position: absolute;
+            top: 35%;
+            left: 83%;
+        }
+
+        .professional {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2rem;
+            color: white;
+            position: absolute;
+            top: 63%;
+            left: 2%;
+        }
 
 
         /* Responsive design for smaller screens */
@@ -186,16 +240,16 @@
             <div class="Bline"></div>
 
             <div class="left-block">
-            </div>
-
-            <div class="right-block">
                 <div class="logo-wrap">
                     <img src="Assets/MS logo.png" alt="" class="logo" />
                     <p class="text microsoft">Microsoft</p>
-                    <p class="text windows">Windows</p>
-                    <p class="text professional">Professional</p>
+                    <p class="text Windows">Windows</p>
                     <p class="text xp">xp</p>
+                    <p class="text professional">Professional</p>
                 </div>
+            </div>
+
+            <div class="right-block">
             </div>
 
         </div>

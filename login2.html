@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1456, initial-scale=1.0">
+<title>Windows XP Login</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1456px;
+    height: 816px;
+    overflow: hidden;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: #3A85C8;
+    position: relative;
+    cursor: default;
+    user-select: none;
+  }
+
+  /* ── Main background gradient ── */
+  .bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 45%,
+        #60A8E8 0%,
+        #4A92D8 30%,
+        #3278BE 65%,
+        #2060A8 100%);
+  }
+
+  /* ── Top dark navy bar ── */
+  .top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 72px;
+    background: linear-gradient(180deg,
+      #0B2060 0%,
+      #0D2878 40%,
+      #1840A0 100%);
+    z-index: 10;
+  }
+
+  /* ── Bottom dark navy bar ── */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 72px;
+    background: linear-gradient(0deg,
+      #0B2060 0%,
+      #0D2878 40%,
+      #1840A0 100%);
+    z-index: 10;
+  }
+
+  /* ── Gold curved line top ── */
+  .curve-top {
+    position: absolute;
+    top: 68px; left: 0; right: 0;
+    height: 28px;
+    z-index: 11;
+    overflow: hidden;
+  }
+  .curve-top svg { width: 100%; height: 100%; }
+
+  /* ── Gold curved line bottom ── */
+  .curve-bottom {
+    position: absolute;
+    bottom: 68px; left: 0; right: 0;
+    height: 28px;
+    z-index: 11;
+    overflow: hidden;
+  }
+  .curve-bottom svg { width: 100%; height: 100%; }
+
+  /* ── Content wrapper ── */
+  .content {
+    position: absolute;
+    top: 96px; bottom: 96px;
+    left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+  }
+
+  /* ── Left panel ── */
+  .left-panel {
+    flex: 0 0 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding-bottom: 16px;
+  }
+
+  /* ── Windows XP Logo ── */
+  .logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .windows-flag {
+    width: 190px;
+    height: 160px;
+    position: relative;
+    margin-left: 32px;
+    margin-bottom: -8px;
+  }
+
+  .windows-flag svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35));
+  }
+
+  .windows-wordmark {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+  }
+
+  .ms-text {
+    color: #D0E8FF;
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+    margin-left: 4px;
+  }
+
+  .win-text {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+  }
+
+  .win-bold {
+    color: #FFFFFF;
+    font-size: 58px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-shadow: 1px 1px 3px rgba(0,0,80,0.4);
+    line-height: 1;
+  }
+
+  .xp-super {
+    color: #E8A020;
+    font-size: 36px;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-left: 4px;
+    margin-bottom: 6px;
+    align-self: flex-end;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+
+  .professional-text {
+    color: #D0E8FF;
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+    margin-left: 4px;
+  }
+
+  .subtitle {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,80,0.4);
+  }
+
+  /* ── Vertical divider ── */
+  .divider {
+    width: 1px;
+    height: 420px;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(255,255,255,0.5) 20%,
+      rgba(255,255,255,0.7) 50%,
+      rgba(255,255,255,0.5) 80%,
+      transparent 100%);
+    flex-shrink: 0;
+  }
+
+  /* ── Right panel ── */
+  .right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 56px;
+    gap: 20px;
+  }
+
+  /* ── User card ── */
+  .user-card {
+    width: 430px;
+    background: linear-gradient(135deg,
+      rgba(70,120,200,0.55) 0%,
+      rgba(50,100,180,0.45) 100%);
+    border: 1px solid rgba(120,170,240,0.6);
+    border-radius: 6px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: background 0.15s;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.25),
+      0 2px 8px rgba(0,0,60,0.3);
+    min-height: 88px;
+  }
+
+  .user-card:hover {
+    background: linear-gradient(135deg,
+      rgba(90,150,230,0.65) 0%,
+      rgba(70,130,210,0.55) 100%);
+  }
+
+  .user-card.active {
+    background: linear-gradient(135deg,
+      rgba(50,100,180,0.75) 0%,
+      rgba(30,80,160,0.65) 100%);
+  }
+
+  /* ── Avatar ── */
+  .avatar-wrap {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 2px solid #D4A800;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.3), 0 2px 6px rgba(0,0,0,0.4);
+    background: #2860A8;
+  }
+
+  .avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .avatar-default {
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.2), 0 2px 6px rgba(0,0,0,0.4);
+    background: #1A3A6A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ── User info ── */
+  .user-info {
+    flex: 1;
+  }
+
+  .user-name {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-weight: 400;
+    text-shadow: 0 1px 3px rgba(0,0,60,0.5);
+    margin-bottom: 2px;
+  }
+
+  /* ── Password row ── */
+  .password-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .pass-label {
+    color: #C0D8F8;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 4px;
+  }
+
+  .pass-input {
+    width: 180px;
+    height: 28px;
+    background: #FFFFFF;
+    border: 2px solid #3060C0;
+    border-radius: 2px;
+    padding: 2px 6px;
+    font-size: 14px;
+    color: #000;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+  }
+
+  .pass-input:focus {
+    border-color: #5090F0;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2), 0 0 4px rgba(80,144,240,0.6);
+  }
+
+  .btn-arrow {
+    width: 30px;
+    height: 28px;
+    background: linear-gradient(180deg, #3FAA50 0%, #2A8A38 100%);
+    border: 1px solid #1A6A28;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .btn-arrow:hover {
+    background: linear-gradient(180deg, #4FBA60 0%, #3A9A48 100%);
+  }
+
+  .btn-arrow svg { width: 16px; height: 16px; }
+
+  .btn-help {
+    width: 30px;
+    height: 28px;
+    background: linear-gradient(180deg, #3A70D0 0%, #2458B0 100%);
+    border: 1px solid #1840A0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+  }
+
+  .btn-help:hover {
+    background: linear-gradient(180deg, #4A80E0 0%, #3468C0 100%);
+  }
+
+  /* ── Password sub-section ── */
+  .pass-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<!-- Top bar -->
+<div class="top-bar"></div>
+
+<!-- Bottom bar -->
+<div class="bottom-bar"></div>
+
+<!-- Gold curve top -->
+<div class="curve-top">
+  <svg viewBox="0 0 1456 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="goldTop" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#FFE050"/>
+        <stop offset="40%" stop-color="#D4A000"/>
+        <stop offset="100%" stop-color="#A07000" stop-opacity="0.3"/>
+      </linearGradient>
+    </defs>
+    <!-- Upper thin gold line -->
+    <path d="M0,4 Q728,-10 1456,4" fill="none" stroke="#FFE878" stroke-width="1.5" opacity="0.8"/>
+    <!-- Main gold arc -->
+    <path d="M0,8 Q728,-8 1456,8 L1456,18 Q728,4 0,18 Z" fill="url(#goldTop)" opacity="0.9"/>
+    <!-- Lower shimmer -->
+    <path d="M0,18 Q728,4 1456,18" fill="none" stroke="#C89000" stroke-width="1" opacity="0.6"/>
+  </svg>
+</div>
+
+<!-- Gold curve bottom -->
+<div class="curve-bottom">
+  <svg viewBox="0 0 1456 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="goldBot" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#A07000" stop-opacity="0.3"/>
+        <stop offset="60%" stop-color="#D4A000"/>
+        <stop offset="100%" stop-color="#FFE050"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,10 Q728,28 1456,10 L1456,20 Q728,38 0,20 Z" fill="url(#goldBot)" opacity="0.9"/>
+    <path d="M0,10 Q728,28 1456,10" fill="none" stroke="#FFE878" stroke-width="1.5" opacity="0.8"/>
+    <path d="M0,20 Q728,38 1456,20" fill="none" stroke="#C89000" stroke-width="1" opacity="0.5"/>
+  </svg>
+</div>
+
+<!-- Main content -->
+<div class="content">
+  <!-- Left Panel -->
+  <div class="left-panel">
+    <!-- Windows XP Logo -->
+    <div style="display:flex; align-items:flex-end; gap:12px;">
+      <!-- Flag SVG -->
+      <div class="windows-flag">
+        <svg viewBox="0 0 190 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Red pane gradient -->
+            <radialGradient id="rg" cx="35%" cy="25%" r="70%">
+              <stop offset="0%" stop-color="#FF7030"/>
+              <stop offset="60%" stop-color="#E83010"/>
+              <stop offset="100%" stop-color="#C01000"/>
+            </radialGradient>
+            <!-- Green pane gradient -->
+            <radialGradient id="gg" cx="65%" cy="25%" r="70%">
+              <stop offset="0%" stop-color="#80D840"/>
+              <stop offset="60%" stop-color="#50B010"/>
+              <stop offset="100%" stop-color="#308000"/>
+            </radialGradient>
+            <!-- Blue pane gradient -->
+            <radialGradient id="bg2" cx="35%" cy="75%" r="70%">
+              <stop offset="0%" stop-color="#60B0F0"/>
+              <stop offset="60%" stop-color="#3080D0"/>
+              <stop offset="100%" stop-color="#1050A0"/>
+            </radialGradient>
+            <!-- Yellow pane gradient -->
+            <radialGradient id="yg" cx="65%" cy="75%" r="70%">
+              <stop offset="0%" stop-color="#FFE060"/>
+              <stop offset="60%" stop-color="#F0A800"/>
+              <stop offset="100%" stop-color="#C07800"/>
+            </radialGradient>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="2" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.4)"/>
+            </filter>
+          </defs>
+
+          <g filter="url(#shadow)">
+            <!-- Red pane (top-left) - curved window-pane shape -->
+            <path d="M10,70 C10,20 50,5 92,5 L92,68 C70,68 40,68 10,70 Z" fill="url(#rg)"/>
+            <!-- Green pane (top-right) -->
+            <path d="M98,5 C140,5 178,20 178,65 L98,68 Z" fill="url(#gg)"/>
+            <!-- Blue pane (bottom-left) -->
+            <path d="M8,78 C8,76 40,76 92,76 L92,150 C50,150 8,135 8,78 Z" fill="url(#bg2)"/>
+            <!-- Yellow pane (bottom-right) -->
+            <path d="M98,76 L178,73 C178,130 140,150 98,150 Z" fill="url(#yg)"/>
+
+            <!-- Highlight overlays for gloss effect -->
+            <path d="M12,68 C12,24 50,10 90,8 L90,38 C65,40 35,50 14,66 Z" fill="white" opacity="0.15"/>
+            <path d="M100,7 C138,9 174,24 174,64 L144,64 C140,40 125,20 100,12 Z" fill="white" opacity="0.12"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Text wordmark -->
+      <div class="windows-wordmark" style="margin-bottom:12px;">
+        <span class="ms-text">Microsoft</span>
+        <div class="win-text">
+          <span class="win-bold">Windows</span>
+          <span class="xp-super">xp</span>
+        </div>
+        <span class="professional-text">Professional</span>
+      </div>
+    </div>
+
+    <!-- Subtitle -->
+    <div class="subtitle">To begin, click the user name</div>
+  </div>
+
+  <!-- Vertical divider -->
+  <div class="divider"></div>
+
+  <!-- Right Panel -->
+  <div class="right-panel">
+
+    <!-- User 1: Soumodeep Santra -->
+    <div class="user-card" onclick="selectUser(this, 'soumodeep')">
+      <div class="avatar-wrap">
+        <!-- Person photo placeholder with the yellow border from the screenshot -->
+        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <!-- Simple person silhouette in a blue-purple background -->
+          <rect width="64" height="64" fill="#3A5A90"/>
+          <!-- Head -->
+          <circle cx="32" cy="20" r="11" fill="#7090C0"/>
+          <!-- Body -->
+          <ellipse cx="32" cy="48" rx="17" ry="14" fill="#5070A0"/>
+          <!-- Shirt hint -->
+          <ellipse cx="32" cy="52" rx="15" ry="10" fill="#4060A0"/>
+          <!-- Face highlight -->
+          <circle cx="29" cy="18" r="3" fill="#8090B0" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="user-info">
+        <div class="user-name">Soumodeep Santra</div>
+      </div>
+    </div>
+
+    <!-- User 2: Administrator -->
+    <div class="user-card active" onclick="selectUser(this, 'admin')" id="admin-card">
+      <div class="avatar-default">
+        <!-- Default user silhouette -->
+        <svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="26" cy="16" r="11" fill="#4A6A9A"/>
+          <ellipse cx="26" cy="44" rx="18" ry="13" fill="#3A5A8A"/>
+          <path d="M8,52 C8,36 44,36 44,52" fill="#3A5A8A"/>
+        </svg>
+      </div>
+      <div class="user-info">
+        <div class="user-name">Administrator</div>
+        <div class="pass-section" id="pass-section">
+          <div class="pass-label">Type your password</div>
+          <div class="password-row">
+            <input class="pass-input" type="password" id="pass-input" autofocus autocomplete="off"/>
+            <div class="btn-arrow" onclick="doLogin(event)" title="Log on">
+              <svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8 L11 8 M8 4 L13 8 L8 12" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="btn-help" onclick="showHelp(event)" title="Help with password">?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function selectUser(card, userId) {
+    // Remove active from all
+    document.querySelectorAll('.user-card').forEach(c => c.classList.remove('active'));
+    // Remove pass section from all
+    document.getElementById('pass-section').style.display = 'none';
+
+    card.classList.add('active');
+
+    if (userId === 'admin') {
+      document.getElementById('pass-section').style.display = '';
+      document.getElementById('pass-input').focus();
+    }
+  }
+
+  function doLogin(e) {
+    e.stopPropagation();
+    const pass = document.getElementById('pass-input').value;
+    alert(pass ? 'Logging in as Administrator...' : 'Please type your password.');
+  }
+
+  function showHelp(e) {
+    e.stopPropagation();
+    alert('Type your Windows account password to log on.');
+  }
+
+  // Make clicking on user 1 hide the admin password
+  document.querySelectorAll('.user-card')[0].addEventListener('click', function() {
+    document.getElementById('pass-section').style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
