@@ -5,10 +5,25 @@
   font-display: block;
   src: url(https://fonts.gstatic.com/s/amiko/v15/WwkQxPq1DFK04tql.ttf) format('truetype');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-display: block;
   src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'CreatoDisplay-I';
+  src: url('/fonts/creato_display/CreatoDisplay-ExtraBoldItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay-L';
+  src: url('/fonts/creato_display/CreatoDisplay-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
