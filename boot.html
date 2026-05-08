@@ -232,19 +232,29 @@
         }
 
         .boxx {
+            position: relative;
             width: 100%;
             height: 24%;
-            background: linear-gradient(135deg, #003C96 0%, #0063a5 100%);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 1);
+
+            
+
             /* fade out to the right */
-            mask-image: linear-gradient(to right, black 10%, transparent 80%);
-            -webkit-mask-image: linear-gradient(to right, black 10%, transparent 80%);
+
             display: flex;
             align-items: center;
         }
 
-        .profile-frame{
+        .bg {
+            position: absolute;
+            inset: 0;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #003C96 0%, #0063a5 100%);
+            border: 1px solid rgba(255, 255, 255, 1);
+            mask-image: linear-gradient(to right, black 10%, transparent 80%);
+            -webkit-mask-image: linear-gradient(to right, black 10%, transparent 80%);
+        }
+
+        .profile-frame {
             height: 75%;
             /* width: clamp(90px,200px,15%); */
             padding: 0 5px;
@@ -256,105 +266,119 @@
             position: relative;
             left: 20px;
         }
-        
-        .deep-photo{
+
+        .deep-photo {
             height: 90%;
             border-radius: 10px;
         }
 
-        .admin-photo{
+        .admin-photo {
             height: 90%;
         }
 
-        .pf2{
+        .pf2 {
             background-color: white;
         }
 
-        .namee{
+        .namee {
             color: white;
+            font-family: 'CreatoDisplay-M';
+            font-size: 25px;
+            left: 40px;
+            padding-left: 40px;
+            padding-bottom: 40px;
+            /* position: absolute; */
+            z-index: 2;
         }
 
 
-            /* Responsive design for smaller screens */
-            @media (max-width: 1600px) {
+        /* Responsive design for smaller screens */
+        @media (max-width: 1600px) {
 
-                .left-block,
-                .right-block {
-                    width: 50%;
-                }
+            .left-block,
+            .right-block {
+                width: 50%;
             }
 
-            @media (max-width: 1024px) {
-                body {
-                    min-width: auto;
-                }
+            .namee {
+                font-size: 20px;
+            }
+        }
 
-                .workarea {
-                    height: calc(100vh - 20vh);
-                    bottom: 10vh;
-                }
-
-                .left-block,
-                .right-block {
-                    width: 100%;
-                    height: 100%;
-                    padding: 0;
-                }
-
-
+        @media (max-width: 1024px) {
+            body {
+                min-width: auto;
             }
 
-            @media (max-width: 768px) {
-                body {
-                    min-width: auto;
-                }
-
-                .workarea {
-                    height: calc(100vh - 20vh);
-                    bottom: 10vh;
-                    flex-direction: column;
-                }
-
-                .left-block,
-                .right-block {
-                    width: 100%;
-                    height: 100%;
-                    padding: 0;
-                }
-
-                .Mline {
-                    width: 80vw;
-                    height: 1vw;
-                    background: linear-gradient(to right,
-                            transparent 0%,
-                            white 40%,
-                            white 60%,
-                            transparent 100%);
-                }
-
-                .logo-wrap {
-                    left: 55%;
-                    transform: translateX(-50%);
-                }
-
-                .begin-text {
-                    top: 65%;
-                    right: 50%;
-                    transform: translateX(50%);
-                    width: 240px;
-                }
-
-                .profile-frame{
-                    padding: 0 2px;
-                    left: 10px;
-                }
-
-                .boxx{
-                    height: 30%;
-                    background: linear-gradient(135deg, #003C96 60%, #0063a5 100%);
-                }
-
+            .workarea {
+                height: calc(100vh - 20vh);
+                bottom: 10vh;
             }
+
+            .left-block,
+            .right-block {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+            }
+
+
+        }
+
+        @media (max-width: 768px) {
+            body {
+                min-width: auto;
+            }
+
+            .workarea {
+                height: calc(100vh - 20vh);
+                bottom: 10vh;
+                flex-direction: column;
+            }
+
+            .left-block,
+            .right-block {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+            }
+
+            .Mline {
+                width: 80vw;
+                height: 1vw;
+                background: linear-gradient(to right,
+                        transparent 0%,
+                        white 40%,
+                        white 60%,
+                        transparent 100%);
+            }
+
+            .logo-wrap {
+                left: 55%;
+                transform: translateX(-50%);
+            }
+
+            .begin-text {
+                top: 65%;
+                right: 50%;
+                transform: translateX(50%);
+                width: 240px;
+            }
+
+            .profile-frame {
+                padding: 0 2px;
+                left: 10px;
+            }
+
+            .boxx {
+                height: 30%;
+            }
+
+            .bg{
+                background: linear-gradient(135deg, #003C96 60%, #0063a5 100%);
+            }
+
+        }
     </style>
 
 </head>
@@ -383,15 +407,18 @@
             <div class="right-block">
                 <div class="box-container">
                     <div class="box1 boxx">
+                        <div class="bg"></div>
                         <div class="profile-frame">
                             <img class="deep-photo" src="Assets/profileeee.jpeg" alt="">
                         </div>
                         <div class="namee">Soumodeep Santra</div>
                     </div>
                     <div class="box2 boxx">
+                        <div class="bg"></div>
                         <div class="profile-frame pf2">
                             <img class="admin-photo" src="Assets/admin.png" alt="">
                         </div>
+                        <div class="namee">Adminstrator</div>
                     </div>
                 </div>
             </div>

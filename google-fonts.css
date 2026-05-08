@@ -27,3 +27,9 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'CreatoDisplay-M';
+
+  src: url('/fonts/creato_display/CreatoDisplay-Medium.otf');
+}
