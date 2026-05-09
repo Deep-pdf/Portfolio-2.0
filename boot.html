@@ -236,7 +236,7 @@
             width: 100%;
             height: 24%;
 
-            
+
 
             /* fade out to the right */
 
@@ -297,7 +297,7 @@
             z-index: 2;
         }
 
-        .buttons-row{
+        .buttons-row {
             position: absolute;
             height: 32%;
             width: 60%;
@@ -310,7 +310,7 @@
             justify-content: space-between;
         }
 
-        #pass-box{
+        #pass-box {
             width: 70%;
             height: 100%;
             border: none;
@@ -319,10 +319,25 @@
             font-size: 16px;
             resize: none;
             border-radius: 5px;
-            
+            opacity: 0;
+            transition: 0.3s;
+            position: relative;
         }
 
-        .help-box{
+        .show-hide {
+            position: absolute;
+            height: 50%;
+            right: 32%;
+            top: 50%;
+            transform: translateY(-60%);
+            /* all: unset; */
+            border: none;
+            background: none;
+            outline: none;
+            opacity: 0;
+        }
+
+        .help-box {
             height: 100%;
             aspect-ratio: 1/1;
             background-color: rgb(0, 3, 154);
@@ -331,14 +346,16 @@
             justify-content: center;
             align-items: center;
             border-radius: 5px;
+            opacity: 0;
+            transition: 0.3s;
         }
 
-        .question-image{
+        .question-image {
             height: 60%;
         }
 
 
-        .next-box{
+        .next-box {
             height: 100%;
             aspect-ratio: 1/1;
             background-color: green;
@@ -347,7 +364,10 @@
             justify-content: center;
             /* align-items: center; */
             border-radius: 5px;
+            opacity: 0;
+            transition: 0.3s;
         }
+
 
         @keyframes fadeInMaskLeftToRight {
             0% {
@@ -355,6 +375,7 @@
                 -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 100%);
                 mask-image: linear-gradient(to right, transparent 0%, transparent 100%);
             }
+
             100% {
                 opacity: 1;
                 -webkit-mask-image: linear-gradient(to right, black 10%, transparent 80%);
@@ -448,10 +469,16 @@
                 height: 30%;
             }
 
-            .bg{
+            .bg {
                 background: linear-gradient(135deg, #003C96 60%, #0063a5 100%);
             }
-            
+
+            .namee{
+                font-size: 15px;
+                font-family: 'CreatoDisplay-L';
+                padding-left: 20px;
+            }
+
         }
     </style>
 
@@ -494,7 +521,10 @@
                         </div>
                         <div class="namee">Adminstrator</div>
                         <div class="buttons-row">
-                            <textarea name="" id="pass-box"></textarea>
+                            <input type="password" id="pass-box" placeholder="Enter password">
+                            <button onclick="tooglepass()" class="show-hide">
+                                <img class="view" src="Assets/view.png" alt="">
+                            </button>
                             <div class="next-box"><img src="Assets/next.png" alt=""></div>
                             <div class="help-box"><img class="question-image" src="Assets/question.png" alt=""></div>
                         </div>
@@ -510,21 +540,26 @@
         const boxes = document.querySelectorAll('.boxx');
         let activeBox = document.querySelector('.box1');
         let activeBg = activeBox.querySelector('.bg');
+        let box2 = document.querySelector('.box2');
+        let buttfade = document.querySelector('.next-box');
+        let helpfade = document.querySelector('.help-box');
+        let showhide = document.querySelector('.show-hide');
+        let passbox = document.querySelector('#pass-box');
         activeBg.classList.add('active');
 
         boxes.forEach(box => {
             box.addEventListener('mouseenter', () => {
                 const bg = box.querySelector('.bg');
-                
+
                 if (activeBox !== box) {
                     // Clear animation from previous box
                     activeBg.style.animation = 'none';
                     activeBg.classList.remove('active');
-                    
+
                     // Set new active box
                     activeBox = box;
                     activeBg = bg;
-                    
+
                     // Trigger animation on new box
                     bg.style.animation = 'none';
                     setTimeout(() => {
@@ -532,8 +567,55 @@
                         bg.classList.add('active');
                     }, 10);
                 }
+
+                // Handle opacity for buttons based on which box is hovered
+                if (box.classList.contains('box2')) {
+                    buttfade.style.opacity = '1';
+                    helpfade.style.opacity = '1';
+                    passbox.style.opacity = '1';
+                    showhide.style.opacity = '1';
+                } else {
+                    buttfade.style.opacity = '0';
+                    helpfade.style.opacity = '0';
+                    passbox.style.opacity = '0';
+                    showhide.style.opacity = '0';
+                }
             });
         });
+
+        function tooglepass() {
+            const passBox = document.getElementById('pass-box');
+            const viewIcon = document.querySelector('.view');
+
+            if (passBox.type === 'password') {
+                passBox.type = 'text';
+                viewIcon.src = 'Assets/hide.png'; // Change to hide icon
+            } else {
+                passBox.type = 'password';
+                viewIcon.src = 'Assets/view.png'; // Change back to view icon
+            }
+        }
+
+
+
+        // box2.addEventListener('mouseenter', () => {
+        //     buttfade.style.opacity = '1';
+        //     helpfade.style.opacity = '1';
+        //     passbox.style.opacity = '1';
+        // });
+
+        // // box2.addEventListener('mouseleave', () => {
+        // //     buttfade.style.opacity = '0';
+        // //     helpfade.style.opacity = '0';
+        // //     passbox.style.opacity = '0';
+        // // });
+
+        // box2.addEventListener('click', () => {
+        //     buttfade.style.opacity = '1';
+        //     helpfade.style.opacity = '1';
+        //     passbox.style.opacity = '1';
+        // });
+
     </script>
 </body>
 
