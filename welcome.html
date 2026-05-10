@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="google-fonts.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 10vh;
+            width: 100%;
+            background: #002c6a;
+            z-index: 10;
+            position: fixed;
+            left: 0;
+            right: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            min-width: 1024px;
+            min-height: 600px;
+        }
+
+        .main {
+            height: 100%;
+            width: 100%;
+            flex: 1;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .top {
+            top: 0;
+        }
+
+        .bottom {
+            bottom: 0;
+        }
+
+        .workarea {
+            height: calc(100vh - 20vh);
+            width: 100%;
+            background:
+                radial-gradient(circle at 15% 30%, rgba(255, 255, 255, 0.15), transparent 40%),
+                radial-gradient(circle at 85% 70%, rgba(255, 255, 255, 0.12), transparent 45%),
+                linear-gradient(135deg, #0063a5 0%, #0b74ba 100%);
+            z-index: 1;
+            position: fixed;
+            top: 10vh;
+            bottom: 10vh;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .Tline {
+            width: clamp(400px, 65vw, 750px);
+            height: 1.2vh;
+            background: white;
+            -webkit-mask-image: radial-gradient(ellipse 60% 100% at center,
+                    black 40%,
+                    transparent 81%);
+            mask-image: radial-gradient(ellipse 60% 100% at center,
+                    black 40%,
+                    transparent 81%);
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .Bline {
+            width: clamp(400px, 65vw, 750px);
+            height: 1.2vh;
+            background: #EBAD00;
+            -webkit-mask-image: radial-gradient(ellipse 60% 100% at center,
+                    black 40%,
+                    transparent 81%);
+            mask-image: radial-gradient(ellipse 60% 100% at center,
+                    black 40%,
+                    transparent 81%);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .welcome{
+            font-family: 'CreatoDisplay-I';
+            font-size: 40px;
+            color: white;
+            text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.85);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="top bar"></div>
+        <div class="workarea">
+            <div class="Bline"></div>
+            <div class="Tline"></div>
+
+            <div class="welcome">
+                welcome
+            </div>
+        </div>
+        <div class="bottom bar"></div>
+    </div>
+</body>
+
+</html>

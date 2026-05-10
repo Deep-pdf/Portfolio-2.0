@@ -1,3 +1,59 @@
+/* ============================================================
+   PRELOADER OVERLAY — Functional preloader system styles
+   ============================================================
+
+   #preloader
+   ----------
+   • Covers the entire viewport with position:fixed, inset:0
+   • z-index: 9999 — sits above all main-site content
+   • Interaction blocking: pointer-events blocks clicks;
+     body overflow:hidden (set via JS) blocks scrolling
+   • Opacity transition drives the cinematic fade-out
+
+   .preloader--fade-out
+   --------------------
+   • Added by preloader.js when both conditions are met:
+       a) 3-second minimum timer elapsed
+       b) window "load" event fired (all assets loaded)
+   • opacity: 0  →  element becomes invisible
+   • pointer-events: none  →  click-through during fade
+   • visibility: hidden (via transition delay)  →  removed
+     from the accessibility tree once fully transparent
+   ============================================================ */
+
+#preloader {
+  /* Fullscreen fixed overlay */
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+
+  /* Black background matches the Windows XP loading screen */
+  background: #000;
+
+  /* Blocks all mouse / touch interaction while active */
+  pointer-events: all;
+
+  /* Transition for cinematic fade-out (duration matches FADE_DURATION_MS in preloader.js) */
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0.8s;  /* hide from a11y tree only after fade */
+}
+
+/* State: fade-out triggered by preloader.js */
+#preloader.preloader--fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* allow underlying page interaction during fade */
+}
+
+/* ============================================================
+   End of preloader overlay styles — project styles below
+   ============================================================ */
+
 @font-face {
   font-family: "Inter Local";
   src: url("Assets/fonts/Inter-Regular.ttf") format("truetype");
@@ -77,6 +133,12 @@ p {
   color: #fff;
   transform: translate(-50%, -50%) scale(var(--frame-scale));
   transform-origin: center center;
+}
+
+@media (max-width: 768px) {
+  .figma-frame {
+    --frame-scale: 0.5;
+  }
 }
 
 .text {
