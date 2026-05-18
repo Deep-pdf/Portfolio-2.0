@@ -28,9 +28,78 @@ body {
     object-position: center;
 }
 
-/* @media (max-width: 1326px) {
-    .wrapper img {
-        width: 1326px;
-        max-width: none;
+.taskbar{
+    width: 100%;
+    height: 40px;
+    background-color:#1947ED;
+    position: absolute;
+    bottom: 0;
+    
+}
+
+.start-button{
+    width: 12%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+    z-index: 2;
+}
+
+.rectangle-button{
+    width: 100%;
+    height: 100%;
+    background-color: #008414;
+    position: absolute;
+    z-index: 2;
+}
+
+.oval-start{
+    width: 20px;
+    height: 100%;
+    background-color: #008414;
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.start-logo{
+    height: 80%;
+    z-index: 3;
+    left: 20px;
+    position: absolute;
+}
+
+.start-text{
+    font-family: 'CreatoDisplay-B';
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    color: white;
+    font-size: 25px;
+    z-index: 3;
+    position: absolute;
+    left: 60px;
+}
+
+@media (max-width: 1024px){
+    .start-button{
+        width: 15%;
     }
-} */
+}
+
+@media (max-width: 768px){
+    .start-button{
+        width: 25%;
+    }
+
+    .start-logo{
+        left: 0;
+    }
+
+    .start-text{
+        left: 35px;
+    }
+}

@@ -33,3 +33,8 @@
 
   src: url('/fonts/creato_display/CreatoDisplay-Medium.otf');
 }
+
+@font-face{
+  font-family: 'CreatoDisplay-B';
+  src: url('/fonts/creato_display/CreatoDisplay-Bold.otf');
+}
