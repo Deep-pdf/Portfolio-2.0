@@ -32,54 +32,91 @@
 
                 <!-- ICONS -->
 
-                <div class="icon" style="top:20px; left:20px;">
+                <div class="icon" style="top:0px; left:0px;">
                     <img src="Assets/My Computer.png">
                     <span>My Computer</span>
                 </div>
 
-                <div class="icon" style="top:120px; left:20px;">
+                <div class="icon" style="top:110px; left:0px;">
                     <img src="Assets/Internet Explorer 6.png">
                     <span>Internet Explorer</span>
                 </div>
 
-                <div class="icon" style="top:220px; left:20px;">
+                <div class="icon" style="top:220px; left:0px;">
                     <img src="Assets/My Documents.png">
                     <span>My Documents</span>
                 </div>
 
-                <div class="icon" style="top:320px; left:20px;">
+                <div class="icon" style="top:330px; left:00px;">
                     <img src="Assets/Notepad.png">
                     <span>Notepad</span>
                 </div>
 
-                <div class="icon" style="top:420px; left:20px;">
+                <div class="icon" style="top:440px; left:00px;">
                     <img src="Assets/Recycle Bin (full).png">
                     <span>Recycle Bin</span>
                 </div>
 
-                <div class="icon" style="top:520px; left:20px;">
+                <div class="icon" style="top:330px; left:110px;">
                     <img src="Assets/Paint.png">
                     <span>Paint</span>
                 </div>
 
-                <div class="icon" style="top:20px; left:120px;">
+                <div class="icon" style="top:0px; left:110px;">
                     <img src="Assets/Audio CD.png">
                     <span>Music</span>
                 </div>
 
-                <div class="icon" style="top:120px; left:120px;">
+                <div class="icon" style="top:110px; left:110px;">
                     <img src="Assets/Email.png">
                     <span>Email</span>
                 </div>
 
-                <div class="icon" style="top:220px; left:120px;">
+                <div class="icon" style="top:220px; left:110px;">
                     <img src="Assets/Windows Media Player 9.png">
                     <span>Media Player</span>
                 </div>
 
-                <div class="icon" style="top:320px; left:120px;">
+                <div class="icon" style="top:550px; left:0px;">
                     <img src="Assets/Minesweeper.png">
-                    <span>Minesweeper</span>
+                    <span>Minesweeper`</span>
+                </div>
+
+                <div class="window">
+
+                    <div class="titlebar">
+                        <span>Minesweeper</span>
+
+                        <div class="buttons">
+                            <div class="win-btn"></div>
+                            <div class="win-btn"></div>
+                            <div class="win-btn close-btn" id="closeBtn">✕</div>
+                        </div>
+                    </div>
+
+                    <div class="top-panel">
+
+                        <div class="counter" id="mineCount">010</div>
+
+                        <div class="face" id="resetBtn">🙂</div>
+
+                        <div class="counter" id="timer">000</div>
+
+                    </div>
+
+                    <div class="board" id="board"></div>
+
+                    <div class="info">
+                        Left Click = Open • Right Click = Flag
+                    </div>
+
+                    <div class="overlay" id="overlay">
+                        <div class="game-over">GAME OVER</div>
+                        <button class="replay-btn" id="replayBtn">
+                            Replay
+                        </button>
+                    </div>
+
                 </div>
 
             </div>
