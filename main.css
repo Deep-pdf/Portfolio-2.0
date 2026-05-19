@@ -28,27 +28,27 @@ body {
     object-position: center;
 }
 
-.taskbar{
+.taskbar {
     width: 100%;
     height: 40px;
-    background-color:#1947ED;
+    background-color: #1947ED;
     position: absolute;
     bottom: 0;
-    
+
 }
 
-.start-button{
+.start-button {
     width: 12%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     position: relative;
     z-index: 2;
 }
 
-.rectangle-button{
+.rectangle-button {
     width: 100%;
     height: 100%;
     background-color: #008414;
@@ -56,7 +56,7 @@ body {
     z-index: 2;
 }
 
-.oval-start{
+.oval-start {
     width: 20px;
     height: 100%;
     background-color: #008414;
@@ -64,42 +64,148 @@ body {
     position: absolute;
     right: -10px;
 
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.start-logo{
+.start-logo {
     height: 80%;
     z-index: 3;
     left: 20px;
     position: absolute;
 }
 
-.start-text{
+.start-text {
     font-family: 'CreatoDisplay-B';
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     color: white;
-    font-size: 25px;
+    font-size: 28px;
     z-index: 3;
     position: absolute;
     left: 60px;
 }
 
-@media (max-width: 1024px){
-    .start-button{
+.right-side {
+    width: 15%;
+    height: 100%;
+    z-index: 2;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.time {
+    font-family: 'CreatoDisplay-R';
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.signal {
+    height: 50%;
+    margin-right: 10px;
+}
+
+.volume {
+    height: 50%;
+    margin-right: 10px;
+}
+
+.desktop {
+    width: 100;
+    height: 100%;
+    position: absolute;
+    user-select: none;
+    top: 0;
+}
+
+.icon {
+    position: absolute;
+
+    width: 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 8px 4px;
+
+    border-radius: 8px;
+
+    color: white;
+
+    cursor: grab;
+
+    transition:
+        transform 0.15s,
+        background 0.15s,
+        box-shadow 0.15s;
+}
+
+/* Hover */
+
+.icon:hover{
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(2px);
+
+    transform:scale(1.03);
+}
+
+/* While Dragging */
+
+.icon.dragging{
+    cursor:grabbing;
+
+    transition:none;
+
+    z-index:999;
+
+    transform:scale(1.08);
+
+    box-shadow:0 12px 25px rgba(0,0,0,0.4);
+}
+
+.icon img{
+    width:48px;
+    height:48px;
+
+    pointer-events:none;
+}
+
+.icon span{
+    margin-top:6px;
+
+    font-size:14px;
+
+    text-align:center;
+
+    text-shadow:
+        1px 1px 2px black,
+        0 0 8px rgba(0,0,0,0.7);
+
+    pointer-events:none;
+}
+
+@media (max-width: 1024px) {
+    .start-button {
         width: 15%;
     }
 }
 
-@media (max-width: 768px){
-    .start-button{
+@media (max-width: 768px) {
+    .start-button {
         width: 25%;
     }
 
-    .start-logo{
+    .start-logo {
         left: 0;
     }
 
-    .start-text{
+    .start-text {
         left: 35px;
     }
 }
