@@ -75,6 +75,56 @@ const mineCountDisplay = document.getElementById("mineCount");
 const resetBtn = document.getElementById("resetBtn");
 const overlay = document.getElementById("overlay");
 const replayBtn = document.getElementById("replayBtn");
+const openGame =document.getElementById("opengame");
+const windowEl = document.getElementById("window");
+const closeBtn =document.getElementById("closeBtn");
+
+/* OPEN/CLOSE WINDOW */
+openGame.addEventListener("dblclick",()=>{
+
+    windowEl.classList.remove("hidden");
+});
+
+closeBtn.addEventListener("click",()=>{
+
+    windowEl.classList.add("hidden");
+});
+
+/* DRAG WINDOW */
+
+windowEl.addEventListener("mousedown",(e)=>{
+
+    isDragging = true;
+
+    /* REMOVE CENTER TRANSFORM */
+
+    const rect =
+    windowEl.getBoundingClientRect();
+
+    windowEl.style.transform = "none";
+
+    windowEl.style.left = rect.left + "px";
+    windowEl.style.top = rect.top + "px";
+
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+});
+
+document.addEventListener("mousemove",(e)=>{
+
+    if(!isDragging) return;
+
+    windowEl.style.left =
+    e.clientX - offsetX + "px";
+
+    windowEl.style.top =
+    e.clientY - offsetY + "px";
+});
+
+document.addEventListener("mouseup",()=>{
+
+    isDragging = false;
+});
 
 const SIZE = 9;
 const MINES = 10;

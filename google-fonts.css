@@ -38,3 +38,13 @@
   font-family: 'CreatoDisplay-B';
   src: url('/fonts/creato_display/CreatoDisplay-Bold.otf');
 }
+
+@font-face{
+  font-family: 'Tahoma-B';
+  src: url('/fonts/Tahoma/TAHOMAB0.TTF');
+}
+
+@font-face{
+  font-family: 'Tahoma-R';
+  src: url('/fonts/Tahoma/Tahoma\ Regular\ font.ttf');
+}
