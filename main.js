@@ -462,3 +462,21 @@ replayBtn.addEventListener("click",()=>{
 });
 
 createBoard();
+
+/* START MENU */
+
+const startBtn = document.getElementById("startBtn");
+const startMenu = document.getElementById("startMenu");
+
+startBtn.addEventListener("click", () => {
+    startMenu.classList.toggle("open");
+});
+
+/* CLOSE START MENU ON OUTSIDE CLICK */
+
+document.addEventListener("click", (e) => {
+
+    if (!startMenu.contains(e.target) && e.target !== startBtn) {
+        startMenu.classList.remove("open");
+    }
+});

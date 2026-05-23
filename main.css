@@ -46,7 +46,8 @@ body {
     align-items: center;
 
     position: relative;
-    z-index: 2;
+    z-index: 5;
+    cursor: pointer;
 }
 
 .rectangle-button {
@@ -66,6 +67,13 @@ body {
     right: -10px;
 
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.rectangle-button,
+.start-logo,
+.start-text,
+.oval-start{
+    pointer-events:none;
 }
 
 .start-logo {
@@ -523,15 +531,43 @@ body {
     border-radius: 20px 20px 0 0;
     border: #0000806a solid 3px;
     box-shadow: rgba(0, 0, 0, 0.3) 6px 6px 10px;
+
+    /* XP OPEN EFFECT */
+
+    transform-origin: bottom left;
+
+    transform:
+        perspective(700px) rotateX(-18deg) scale(.82) translateY(45px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        transform .22s cubic-bezier(.17, .84, .44, 1),
+        opacity .16s;
+}
+
+.start-menu.open{
+
+    transform:
+    perspective(700px)
+    rotateX(0deg)
+    scale(1)
+    translateY(0);
+
+    opacity:1;
+
+    pointer-events:auto;
 }
 
 .big-box1 {
     width: 100%;
-    height: 70%;
+    height: 75%;
     background: white;
     position: absolute;
     top: 50%;
-    transform: translate(0%, -50%);
+    transform: translate(0%, -47%);
     display: flex;
     align-items: center;
 
@@ -563,14 +599,14 @@ body {
 
 .bottom-barr {
     width: 100%;
-    height: 15%;
+    height: 10%;
     /* background: #7b7b7b; */
     position: absolute;
     bottom: 0;
     display: flex;
     align-items: center;
-    justify-content:flex-end;
-    
+    justify-content: flex-end;
+
 }
 
 .log-out-part {
@@ -581,6 +617,7 @@ body {
     /* background: #ff3b3b; */
     position: relative;
     right: 50px;
+    bottom: 5px;
 }
 
 .profile-frame {
@@ -629,6 +666,7 @@ body {
     /* background: #ff3b3b; */
     position: relative;
     right: 30px;
+    bottom: 5px;
 }
 
 .turn-off-photo {
@@ -643,27 +681,90 @@ body {
     padding-left: 10px;
 }
 
-.main-menu-apps{
-
+.main-menu-apps {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
 }
 
-.appss{
+.appss {
     width: 100%;
-    height: 70px;
+    height: 14%;
     display: flex;
     align-items: center;
 }
 
-.app-logo{
+.app-logo {
     height: 70%;
     padding: 0 15px;
 }
 
-.app-namee{
-    font-family: 'CreatoDisplay-M';
-    font-size: 20px;
+.app-namee {
+    font-family: 'Tahoma-R';
+    font-size: 18px;
+    color: #000000;
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); */
+}
+
+.all-prog {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.linne {
+    height: 1.5px;
+    width: 50%;
+    background-color: #000000;
+
+}
+
+.under-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.all-prog-text {
+    font-family: 'CreatoDisplay-L';
+    font-size: 14px;
     color: #000000;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 4% 10px;
+}
+
+.all-trianglee {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid rgb(0, 172, 0);
+}
+
+.side-menu-apps {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: flex-start;
+    padding: 10px 0px;
+
+}
+
+.side-appss {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 1024px) {
