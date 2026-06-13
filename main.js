@@ -480,3 +480,23 @@ document.addEventListener("click", (e) => {
         startMenu.classList.remove("open");
     }
 });
+
+//open karo windows explorer
+document.getElementById("Mycomp").addEventListener("dblclick", () =>{
+    document.querySelector(".windows-explorer").classList.add("show");
+});
+
+// Close the windows-explorer on click
+document.getElementById("closeee").addEventListener("click", () => {
+    document.querySelector(".windows-explorer").classList.remove("show");
+});
+
+// Change cursor to pointer on hover
+document.getElementById("closeee").addEventListener("mouseover", () => {
+    document.getElementById("closeee").style.cursor = "pointer";
+});
+
+// Change cursor back to default on mouseout
+document.getElementById("closeee").addEventListener("mouseout", () => {
+    document.getElementById("closeee").style.cursor = "default";
+});

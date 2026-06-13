@@ -73,8 +73,8 @@ body {
 .rectangle-button,
 .start-logo,
 .start-text,
-.oval-start{
-    pointer-events:none;
+.oval-start {
+    pointer-events: none;
 }
 
 .start-logo {
@@ -549,17 +549,14 @@ body {
         opacity .16s;
 }
 
-.start-menu.open{
+.start-menu.open {
 
     transform:
-    perspective(700px)
-    rotateX(0deg)
-    scale(1)
-    translateY(0);
+        perspective(700px) rotateX(0deg) scale(1) translateY(0);
 
-    opacity:1;
+    opacity: 1;
 
-    pointer-events:auto;
+    pointer-events: auto;
 }
 
 .big-box1 {
@@ -766,6 +763,69 @@ body {
     height: 10%;
     display: flex;
     align-items: center;
+}
+
+.windows-explorer {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.windows-explorer.show{
+    display: block;
+}
+
+.windows-upar {
+    height: 20%;
+    width: 100%;
+    top: 0;
+    position: relative;
+    background-color: #D9D9D9;
+}
+
+.windows-navbar {
+    width: 100%;
+    height: 35px;
+    background-color: #173CC0;
+    position: relative;
+    top: 0;
+    z-index: 10px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.left-sideee {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.wintext {
+    color: white;
+    font-family: Tahoma-R;
+}
+
+.window-left-icon {
+    height: 80%;
+    padding: 0 10px;
+}
+
+.right-sideee {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding:0 5px;
+}
+
+.navv-icons{
+    height: 80%;
+    padding: 2px;
 }
 
 @media (max-width: 1024px) {
