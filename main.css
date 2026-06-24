@@ -771,11 +771,12 @@ body {
     background-color: white;
     position: absolute;
     top: 0;
-    display: none;
+    /* display: none; */
 }
 
 .windows-explorer.show {
     display: flex;
+    flex-direction: column;
 }
 
 .windows-upar {
@@ -790,7 +791,7 @@ body {
 
 .windows-navbar {
     width: 100%;
-    height: 35px;
+    height: 20%;
     background-color: #173CC0;
     position: relative;
     top: 0;
@@ -831,15 +832,42 @@ body {
 }
 
 .windows-navbarrM {
-    height: 100%;
+    height: 80%;
     width: 100%;
+
+}
+
+.A-Mpart{
+    height: 100%;
+    width: 25%;
+    background-color: #acdeff;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.backjaana{
+    height: 100%;
+    width: 35%;
+    /* background-color: #173CC0; */
+    display: flex;
+    position: absolute;
+    left: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Back-button1{
+    height: 60%;
+
 }
 
 .windows-navbarrM .topp-part {
     height: 25%;
     width: 100%;
     background-color: #D9D9D9;
-        display: flex;
+    display: flex;
     align-items: center;
 }
 
@@ -859,13 +887,64 @@ body {
     height: 50%;
     width: 100%;
     background-color: #D9D9D9;
-    border-top : rgba(164, 164, 164, 0.612) 3px solid;
+    border-top: rgba(164, 164, 164, 0.612) 3px solid;
+    border-bottom: rgba(164, 164, 164, 0.612) 3px solid;
 }
 
 .windows-navbarrM .bottomm-part {
     height: 25%;
     width: 100%;
     background-color: #D9D9D9;
+    display: flex;
+}
+
+.addresss {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "bettervcr";
+    color: #626262;
+    font-size: 14px;
+}
+
+.left-address-bar{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding-left: 6px;
+}
+
+.mycompadd{
+    height: 70%;
+
+}
+
+.goo-button {
+    width: 10%;
+    height: 100%;
+}
+
+.path-address {
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    /* border: #656565 2px solid; */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+
+}
+
+.windows-niche{
+    height: 80%;
+    width: 100%;
+    /* background-color: #008414; */
+}
+
+#Demo1{
+    font-family: "CreatoDisplay-B";
+    font-size: 30px;
 }
 
 

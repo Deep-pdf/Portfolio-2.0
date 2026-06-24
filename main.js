@@ -500,3 +500,74 @@ document.getElementById("closeee").addEventListener("mouseover", () => {
 document.getElementById("closeee").addEventListener("mouseout", () => {
     document.getElementById("closeee").style.cursor = "default";
 });
+
+/* WINDOWS EXPLORER ADDRESS PATH */
+class WindowsExplorerPath {
+    constructor() {
+        this.currentPath = ["My Computer"];
+        this.pathHistory = [];
+        this.addressElement = document.querySelector(".addresss-p");
+        this.updateAddressDisplay();
+    }
+
+    // Update the address display in the address bar
+    updateAddressDisplay() {
+        if (this.addressElement) {
+            this.addressElement.innerHTML = this.currentPath.join("\\");
+        }
+    }
+
+    // Navigate into a folder/item
+    navigateTo(itemId, itemName = "Folder") {
+        // Store current path in history
+        this.pathHistory.push([...this.currentPath]);
+        
+        // Add item to current path
+        this.currentPath.push(itemName);
+        
+        this.updateAddressDisplay();
+    }
+
+    // Go back to previous location
+    navigateBack() {
+        if (this.pathHistory.length > 0) {
+            this.currentPath = this.pathHistory.pop();
+            this.updateAddressDisplay();
+        }
+    }
+
+    // Go to root (My Computer)
+    navigateToRoot() {
+        this.pathHistory = [];
+        this.currentPath = ["My Computer"];
+        this.updateAddressDisplay();
+    }
+
+    // Get current path as string
+    getPathString() {
+        return this.currentPath.join("\\");
+    }
+}
+
+// Initialize the path system
+const explorerPath = new WindowsExplorerPath();
+
+// Handle clicks on demo items
+document.getElementById("demo1")?.addEventListener("click", (e) => {
+    explorerPath.navigateTo("demo1", "Demo1");
+    e.stopPropagation();
+});
+
+document.getElementById("demo2")?.addEventListener("click", (e) => {
+    explorerPath.navigateTo("demo2", "Pictures");
+    e.stopPropagation();
+});
+
+// Optional: Close windows explorer and reset path
+const windowsExplorer = document.querySelector(".windows-explorer");
+const originalCloseListener = document.getElementById("closeee");
+if (originalCloseListener) {
+    originalCloseListener.addEventListener("click", () => {
+        explorerPath.navigateToRoot();
+    });
+}

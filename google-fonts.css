@@ -48,3 +48,8 @@
   font-family: 'Tahoma-R';
   src: url('/fonts/Tahoma/Tahoma\ Regular\ font.ttf');
 }
+
+@font-face{
+  font-family: 'bettervcr';
+  src: url('/fonts/VCR/BetterVCR\ 25.09.ttf');
+}
