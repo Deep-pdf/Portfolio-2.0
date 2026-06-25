@@ -513,7 +513,7 @@ class WindowsExplorerPath {
     // Update the address display in the address bar
     updateAddressDisplay() {
         if (this.addressElement) {
-            this.addressElement.innerHTML = this.currentPath.join("\\");
+            this.addressElement.innerHTML = this.currentPath.join(" > ");
         }
     }
 

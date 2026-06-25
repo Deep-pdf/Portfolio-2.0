@@ -837,30 +837,79 @@ body {
 
 }
 
-.A-Mpart{
+.A-Mpart {
     height: 100%;
-    width: 25%;
-    background-color: #acdeff;
+    width: clamp(18%,350px, 55%);
+    /* background-color: #acdeff; */
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.backjaana{
+.oval1 {
+    width: 3px;
+    height: 90%;
+    background-color: rgba(164, 164, 164, 0.612);
+    border-radius: 20px / 1000px;
+}
+
+.backjaana {
     height: 100%;
     width: 35%;
     /* background-color: #173CC0; */
     display: flex;
-    position: absolute;
-    left: 5%;
+    /* position: absolute;
+    left: 8%; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.Back-button1 {
+    height: 50%;
+    transform: scale(-1);
+    transform-origin: center;
+}
+
+.aagejana {
+    height: 100%;
+    width: 35%;
+    /* background-color: #173CC0; */
+    display: flex;
+    /* position: absolute;
+    left: 43%; */
     height: 100%;
     display: flex;
     align-items: center;
 }
 
-.Back-button1{
-    height: 60%;
+.Next-button1 {
+    height: 50%;
+}
 
+.backtexxt {
+    font-family: "Tahoma-R";
+    font-size: 20px;
+    padding: 10px;
+}
+
+.aagetext {
+    font-family: "Tahoma-R";
+    font-size: 20px;
+    padding: 10px;
+}
+
+.kholo1{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kholoimg{
+    height: 60%;
 }
 
 .windows-navbarrM .topp-part {
@@ -889,6 +938,8 @@ body {
     background-color: #D9D9D9;
     border-top: rgba(164, 164, 164, 0.612) 3px solid;
     border-bottom: rgba(164, 164, 164, 0.612) 3px solid;
+    display: flex;
+    align-items: center;
 }
 
 .windows-navbarrM .bottomm-part {
@@ -909,7 +960,7 @@ body {
     font-size: 14px;
 }
 
-.left-address-bar{
+.left-address-bar {
     height: 100%;
     width: 90%;
     display: flex;
@@ -917,9 +968,16 @@ body {
     padding-left: 6px;
 }
 
-.mycompadd{
+.mycompadd {
     height: 70%;
 
+}
+
+.addresss-p{
+    padding: 10px;
+    font-family: "Tahoma-R";
+    font-size: 14px;
+    color: #2f2f2f;
 }
 
 .goo-button {
@@ -936,16 +994,45 @@ body {
 
 }
 
-.windows-niche{
+.B-Mpart{
+    width: clamp(15%,320px,45%);
+    height: 100%;
+    /* background-color: #008414; */
+    display: flex;
+}
+
+.search1-part{
+    width: 50%;
+    padding-left: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.folder1-part{
+       width: 50%;
+    /* padding-left: 20px; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search1-img{
+    height: 60%;
+}
+
+.windows-niche {
     height: 80%;
     width: 100%;
     /* background-color: #008414; */
 }
 
-#Demo1{
+#Demo1 {
     font-family: "CreatoDisplay-B";
     font-size: 30px;
 }
+
+
 
 
 @media (max-width: 1024px) {
@@ -984,5 +1071,42 @@ body {
 @media (max-width: 548px) {
     .start-menu {
         width: 99%;
+    }
+
+    .Back-button1{
+        height: 35%;
+    }
+
+    .Next-button1{
+        height: 35%;
+    }
+
+    .backjaana{
+        padding-left:  10px;
+    }
+
+    .kholo1{
+        width: 30%;
+    }
+
+    .kholoimg{
+        height: 40%;
+    }
+
+    .search1-part{
+        padding-left: 5px;
+    }
+
+    .search1-img{
+        height: 40%;
+    }
+
+    .aagetext{
+        font-size: 18px;
+    }
+
+    .backtexxt{
+        font-size: 18px;
+        padding: 2px;
     }
 }
