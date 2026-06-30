@@ -948,6 +948,7 @@ body {
     width: 100%;
     background-color: #D9D9D9;
     display: flex;
+    justify-content: space-evenly;
 }
 
 .addresss {
@@ -1022,6 +1023,10 @@ body {
     height: 60%;
 }
 
+.folder1-img {
+    height: 55%;
+}
+
 .windows-niche {
     height: 80%;
     width: 100%;
@@ -1036,12 +1041,13 @@ body {
 
 .left-panel1 {
     height: 100%;
-    width: clamp(30%,350px,600px);
+    width: clamp(29%, 370px, 600px);
     background: linear-gradient(to bottom, #7e9ff9, #4c44eb);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    z-index: 2;
 }
 
 .boxx1 {
@@ -1053,6 +1059,8 @@ body {
     display: flex;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .boxx2 {
@@ -1064,6 +1072,8 @@ body {
     display: flex;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .boxx3 {
@@ -1075,13 +1085,83 @@ body {
     display: flex;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.right-panel1{
+.box-top1 {
+    height: 35px;
+    width: 100%;
+    background-color: #E2E7FF;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Box-title1 {
+    padding-left: 5%;
+    display: flex;
+    justify-content: center;
+    font-family: "CreatoDisplay-B";
+    color: #004E9C;
+}
+
+.uparrow1 {
+    height: 90%;
+    padding-right: 2%;
+}
+
+.right-panel1 {
     height: 100%;
     flex-grow: 1;
-    
+    position: relative;
 }
+
+.box-bodyA {
+    height: 80%;
+    width: 100%;
+    padding-top: 5px;
+}
+
+.box-line1{
+    height: 30px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    padding-top: 5px;
+}
+
+.line-img1{
+    height: 80%;
+}
+
+.line-text1{
+    font-family: "CreatoDisplay-M";
+    font-size: 15px;
+    color: #004E9C;
+    padding-left: 10px;
+}
+
+.Ri-title1{
+    font-size: 25px;
+    font-family: "CreatoDisplay-M";
+    padding: 1%;
+    /* background-color: greenyellow; */
+
+}
+
+.Ri-oval1{
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    left: -50%;
+    background-color: #B4C8FC;
+    border-radius: 3000px / 40px;
+}
+
 
 @media (max-width: 1024px) {
     .start-button {
@@ -1099,6 +1179,10 @@ body {
     .left-sideee {
         width: 35%;
     }
+
+    .path-address {
+        width: 70%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1114,11 +1198,19 @@ body {
         left: 35px;
     }
 
+    .addresss {
+        font-size: 10px;
+        padding-right: 15px;
+    }
+
+    .topp-text-wrap {
+        padding-left: 10px;
+    }
 }
 
 @media (max-width: 548px) {
     .start-menu {
-        width: 99%;
+        width: 98.5%;
     }
 
     .Back-button1 {
@@ -1149,6 +1241,10 @@ body {
         height: 40%;
     }
 
+    .folder1-img {
+        height: 40%;
+    }
+
     .aagetext {
         font-size: 18px;
     }
@@ -1156,5 +1252,51 @@ body {
     .backtexxt {
         font-size: 18px;
         padding: 2px;
+    }
+
+    .windows-navbarrM .bottomm-part {
+        justify-content: right;
+    }
+
+    .goo-button {
+        width: 12%;
+    }
+
+    .topp-text-wrap {
+        padding-left: 0;
+    }
+
+    .topp-part {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .windows-niche{
+        flex-direction: column-reverse;
+    }
+
+    .left-panel1{
+        width: 100%;
+        height: 140%;
+    }
+
+    .boxx1{
+        top: 10px;
+        height: 29%;
+    }
+
+    .boxx2{
+        height: 35%;
+        top: 34%;
+    }
+
+    .boxx3{
+        top: 72%;
+        height: 17%;
+    }
+
+    .box-line1{
+        height: 20px;
+        padding-top: 4px;
     }
 }
