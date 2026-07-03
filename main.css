@@ -771,7 +771,7 @@ body {
     background-color: white;
     position: absolute;
     top: 0;
-    /* display: none; */
+    display: none;
 }
 
 .windows-explorer.show {

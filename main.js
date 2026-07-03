@@ -571,3 +571,9 @@ if (originalCloseListener) {
         explorerPath.navigateToRoot();
     });
 }
+
+//paint window
+
+document.getElementById("Mypaint1").addEventListener("dblclick", () =>{
+    document.querySelector(".app-window1").classList.remove("hidden");
+});

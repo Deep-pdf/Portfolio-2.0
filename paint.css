@@ -1,0 +1,387 @@
+/* :root {
+  color-scheme: light;
+} */
+
+/* * {
+  box-sizing: border-box;
+} */
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+/* body {
+  background: #3a6ea5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #111;
+  overflow: hidden;
+} */
+
+.hidden {
+  display: none !important;
+}
+
+.app-window1 {
+  position: absolute;
+  width: min(100%, 980px);
+  max-width: 980px;
+  min-width: 320px;
+  background: #ece9d8;
+  border: 2px outset #c0c0c0;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 6px;
+  cursor: move;
+  background: linear-gradient(180deg, #0058e6 0%, #3a86ff 40%, #0058e6 100%);
+}
+
+.title-icon {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(180deg, #f8f8f8 0%, #e4e4e4 100%);
+  border: 1px solid #003399;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.title-text {
+  flex: 1;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 0 #003399;
+}
+
+.title-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.title-button {
+  width: 18px;
+  height: 16px;
+  border: 1px solid #003399;
+  background: linear-gradient(180deg, #6699ff, #3366cc);
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.menu-bar {
+  display: flex;
+  gap: 0;
+  padding: 1px 4px;
+  background: #ece9d8;
+  border-bottom: 1px solid #aca899;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-button {
+  padding: 2px 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #000;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.menu-button.active {
+  background: #316ac5;
+  color: #fff;
+  border-color: #003399;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #ece9d8;
+  border: 1px solid #7a7a7a;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.menu-dropdown button {
+  width: 100%;
+  padding: 4px 20px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 12px;
+  color: #000;
+  cursor: pointer;
+}
+
+.menu-dropdown button:hover {
+  background: #316ac5;
+  color: white;
+}
+
+.main-panel {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.toolbox {
+  width: 54px;
+  padding: 4px;
+  border-right: 1px solid #aca899;
+  background: #ece9d8;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+}
+
+.tool-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 1px;
+  font-size: 11px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border: 2px outset #ffffff;
+  color: #000;
+  background: linear-gradient(180deg, #f0efea, #d4d0c8);
+}
+
+.tool-button.active {
+  background: #316ac5;
+  border-color: #003399;
+  color: white;
+}
+
+.brush-panel {
+  padding: 2px;
+  border: 1px inset #aca899;
+  background: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+
+.brush-button {
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #000;
+}
+
+.brush-button.active {
+  background: #316ac5;
+  border: 2px solid #fff;
+}
+
+.fill-toggle {
+  width: 100%;
+  height: 20px;
+  font-size: 10px;
+  border: 2px outset #fff;
+  cursor: pointer;
+  background: linear-gradient(180deg, #f0efea, #d4d0c8);
+}
+
+.fill-toggle.active {
+  background: #316ac5;
+  color: white;
+}
+
+.canvas-area {
+  flex: 1;
+  background: #808080;
+  padding: 8px;
+  overflow: auto;
+}
+
+.canvas-wrapper {
+  position: relative;
+  display: inline-block;
+  transform-origin: top left;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+canvas {
+  display: block;
+  width: 800px;
+  height: 500px;
+}
+
+#paint-canvas {
+  background: white;
+}
+
+#overlay-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  background: transparent;
+}
+
+.text-overlay {
+  position: absolute;
+  z-index: 10;
+}
+
+.text-input {
+  background: transparent;
+  border: 1px dashed #0078d4;
+  outline: none;
+  min-width: 20px;
+  padding: 0;
+}
+
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 6px;
+  border-top: 2px solid #aca899;
+  background: #ece9d8;
+  flex-wrap: wrap;
+}
+
+.active-colors {
+  position: relative;
+  width: 32px;
+  height: 28px;
+  margin-right: 4px;
+}
+
+.color-bg, .color-fg {
+  position: absolute;
+  border: 1px solid #7a7a7a;
+}
+
+.color-bg {
+  left: 6px;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  z-index: 0;
+}
+
+.color-fg {
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #000;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  width: min(272px, calc(100% - 260px));
+}
+
+.palette-swatch {
+  width: 15px;
+  height: 14px;
+  border: 1px solid #7a7a7a;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.text-options {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.text-options select, .text-options button {
+  font-size: 11px;
+  padding: 1px 2px;
+  cursor: pointer;
+}
+
+.text-options button {
+  width: 20px;
+  height: 20px;
+  border: 1px outset;
+  background: #d4d0c8;
+  color: #000;
+}
+
+.text-options button.active {
+  background: #316ac5;
+  color: white;
+}
+
+.status-bar {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  color: #555;
+  font-size: 11px;
+}
+
+.hidden-color {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+@media (max-width: 860px) {
+  .app-window {
+    width: 100%;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .canvas-area {
+    padding: 4px;
+  }
+}
+
+@media (max-width: 620px) {
+  .main-panel {
+    flex-direction: column;
+  }
+
+  .toolbox {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .canvas-area {
+    order: 2;
+  }
+
+  .bottom-bar {
+    flex-wrap: wrap;
+  }
+}
